@@ -41,10 +41,27 @@ public class Kfzjsw {
                     System.out.println(bookTitle.get(0).text());
                     Elements elements1 = document1.getElementsByClass("detail-con clearfix");
                     Elements elements2 = elements1.get(0).getElementsByClass("info-con-box info-con-box-left");
-                    //作者
                     Elements item = elements2.get(0).getElementsByClass("item");
-                    String text = item.get(0).text();
-                    System.out.println(item);
+                    //作者:
+                    String author = item.get(0).text();
+                    System.out.println(author);
+                    //出版社:
+                    String press = item.get(1).text();
+                    System.out.println(press);
+                    //出版时间:
+                    String time = item.get(2).text();
+                    System.out.println(time);
+                    //版次:
+                    String revision = item.get(3).text();
+                    System.out.println(revision);
+                    //ISBN:
+                    String ISBN = item.get(4).text();
+                    System.out.println(ISBN);
+                    //定价:
+                    String price = item.get(5).text();
+                    System.out.println(price);
+
+                    System.out.println("=============================================");
 
                 }
 
