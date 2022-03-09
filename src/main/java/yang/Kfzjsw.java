@@ -29,20 +29,25 @@ public class Kfzjsw {
         Document document = Jsoup.parse(new URL(url), 10000);
         Element element = document.getElementById("listBox");
         Elements elements = element.getElementsByClass("item-info");
+        int j = 0;
         for (Element el : elements) {
             Elements title = el.getElementsByClass("title");
             for (Element ti : title) {
                 Elements a = ti.getElementsByTag("a");
                 for (Element a1 : a) {
-                    String href = a.attr("href");
+                    String href = a1.attr("href");
                     Document document1 = Jsoup.parse(new URL(href), 10000);
                     //图书名
                     Elements bookTitle = document1.getElementsByClass("detail-title");
-                    System.out.println(bookTitle.get(0).text());
+                    System.out.println(j++ + "." + bookTitle.get(0).text());
                     Elements elements1 = document1.getElementsByClass("detail-con clearfix");
                     Elements elements2 = elements1.get(0).getElementsByClass("info-con-box info-con-box-left");
                     Elements item = elements2.get(0).getElementsByClass("item");
-                    //作者:
+                    for (int i = 0; i < item.size(); i++) {
+                        String items = item.get(i).text();
+                        System.out.println(items);
+                    }
+                    /*//作者:
                     String author = item.get(0).text();
                     System.out.println(author);
                     //出版社:
@@ -59,7 +64,7 @@ public class Kfzjsw {
                     System.out.println(ISBN);
                     //定价:
                     String price = item.get(5).text();
-                    System.out.println(price);
+                    System.out.println(price);*/
 
                     System.out.println("=============================================");
 
