@@ -1,4 +1,4 @@
-package yang;
+package yang.test;
 
 /**
  * Hello world!

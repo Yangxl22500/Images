@@ -1,4 +1,4 @@
-package yang;
+package yang.test;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
