@@ -13,7 +13,7 @@ import java.util.logging.Logger;
 public class YingShiBiZhi {
     public static void main(String[] args) throws Exception {
         for (int i = 0; i < 20; i++) {
-            String url = "http://xinzhuobu.com/?cat=23&paged=" + i;
+            String url = "http://xinzhuobu.com/?cat=6&paged=" + i;
             Document document = Jsoup.parse(new URL(url), 5000);
             Elements elements = document.getElementsByClass("row posts-wrapper");
             Elements elements1 = elements.get(0).getElementsByClass("col-lg-1-5 col-6 col-sm-6 col-md-4 col-lg-3");

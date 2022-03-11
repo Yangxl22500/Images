@@ -1,5 +1,6 @@
 package yang.test;
 
+import com.alibaba.fastjson.JSONObject;
 import com.sun.deploy.net.HttpResponse;
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
@@ -20,8 +21,8 @@ public class dou {
         String itemId = strUrl.substring(strUrl.indexOf("video/"), strUrl.lastIndexOf("/")).replace("video/", "");
         String videoUrl = videoPath + itemId;
         String jsonStr = Jsoup.connect(videoUrl).ignoreContentType(true).execute().body();
-        /*JSONObject json = new JSONObject(jsonStr);
-        String videoAddress = json.getJSONArray("item_list").getJSONObject(0).getJSONObject("video").getJSONObject("play_addr").getJSONArray("url_list").get(0).toString();
+        JSONObject json = new JSONObject(Boolean.parseBoolean(jsonStr));
+        /*String videoAddress = json.getJSONArray("item_list").getJSONObject(0).getJSONObject("video").getJSONObject("play_addr").getJSONArray("url_list").get(0).toString();
         HashMap headers = MapUtil.newHashMap();
         headers.put("User-Agent", "Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1");
         String replace = videoAddress.replace("playwm", "play");

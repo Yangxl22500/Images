@@ -15,11 +15,11 @@ public class BiAnTuWang {
         for (int i = 1; i < 142; i++) {
             String url = null;
             if (i == 1) {
-                url = "https://pic.netbian.com/4kmeinv/";
+                url = "https://pic.netbian.com/4kfengjing//";
             }else {
-                url = "https://pic.netbian.com/4kmeinv/index_"+ i + ".html";
+                url = "https://pic.netbian.com/4kfengjing//index_"+ i + ".html";
             }
-            Document document = Jsoup.parse(new URL(url), 5000);
+            Document document = Jsoup.parse(new URL(url), 1500);
             Elements elements = document.getElementsByClass("slist");
             Elements ul = elements.get(0).getElementsByTag("ul");
             Elements img = ul.get(0).getElementsByTag("img");
@@ -31,7 +31,7 @@ public class BiAnTuWang {
                 URLConnection urlConnection = tatget.openConnection();
                 InputStream inputStream = urlConnection.getInputStream();
                 try {
-                    OutputStream outputStream = new FileOutputStream("E:\\Reptile\\彼岸图网\\" + alt + ".jpg");
+                    OutputStream outputStream = new FileOutputStream("E:\\Reptile\\彼岸图网1\\" + alt + ".jpg");
                     int temp = 0;
                     while ((temp = inputStream.read()) != -1) {
                         outputStream.write(temp);
