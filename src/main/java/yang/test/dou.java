@@ -1,14 +1,12 @@
 package yang.test;
 
 import com.alibaba.fastjson.JSONObject;
-import com.sun.deploy.net.HttpResponse;
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 
 import java.io.*;
 import java.net.URL;
 import java.net.URLConnection;
-import java.util.HashMap;
 
 public class dou {
     public static void main(String[] args) throws Exception {

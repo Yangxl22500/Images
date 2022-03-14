@@ -11,7 +11,7 @@ import java.net.URL;
 public class DouYin {
     public static void main(String[] args) throws Exception {
 //        String url = "https://www.douyin.com/user/MS4wLjABAAAAxHqCLnTmAPwDpnx2UDR410Cls9pAZt97Q9AP1ovKCPJAT1FGVwQw_3d589YpkJ7v";
-        String url = "https://www.kuaishou.com/profile/3x9mr5wvey9afuw";
+        String url = "https://www.douyin.com/video/7069306352820079875?modeFrom=userPost&secUid=MS4wLjABAAAAnLi0U64jXuDasA51NEU-ZLqICRBj_3b1YJcAg4i2hKo";
         Document document = Jsoup.parse(new URL(url), 10000);
         System.out.println(document);
         Element element = document.getElementById("root");
