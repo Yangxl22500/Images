@@ -29,14 +29,17 @@ public class Douyin {
             return;
         }
         System.out.println("请选择要解析的链接：");
-        String next = scanner.next();
-        Connection con = Jsoup.connect(next);
+        String pathUrl = scanner.next();
+        Connection con = Jsoup.connect(pathUrl);
         con.header("User-Agent", "Mozilla/5.0 (iPhone; CPU iPhone OS 12_1_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/16D57 Version/12.0 Safari/604.1");
         Connection.Response resp = con.method(Connection.Method.GET).execute();
         String videoUrl = null;
         if (index.equals("1")){
             videoUrl = videoPath + getItemId(resp.url().toString());
         }else if (index.equals("2")){
+            int i = pathUrl.indexOf("/video/");
+            String substring = pathUrl.substring(i);
+            String itemId = getItemId(resp.url().toString());
             videoUrl = videoPath + "7071963272806665504";
         }
 
